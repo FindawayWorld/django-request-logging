@@ -46,7 +46,7 @@ class ColourLogger(Logger):
 
 class LoggingMiddleware(MiddlewareMixin):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(LoggingMiddleware, self).__init__(*args, **kwargs)
 
         self.log_level = getattr(settings, SETTING_NAMES['log_level'], DEFAULT_LOG_LEVEL)
         if self.log_level not in [logging.NOTSET, logging.DEBUG, logging.INFO,
